@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /sagarportfolio/
+
+# Blog single post clean URLs
+RewriteRule ^blog/([a-z0-9-]+)/?$ blog-single.php?slug=$1 [L,QSA]
+
+# Sitemap & robots
+RewriteRule ^sitemap\.xml$ sitemap.xml.php [L]
+RewriteRule ^robots\.txt$ robots.php [L]
+
+# Prevent direct access to sensitive dirs
+RewriteRule ^(app|config|database|includes)/ - [F,L]
