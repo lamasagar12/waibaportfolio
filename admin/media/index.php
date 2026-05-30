@@ -1,6 +1,6 @@
 <?php
-$adminTitle = 'Media Library';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../includes/bootstrap.php';
+Auth::requireAuth();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     CSRF::validateOrDie();
@@ -24,6 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $filters = [];
 if (!empty($_GET['search'])) $filters['search'] = $_GET['search'];
 $media = ImageService::all($filters);
+
+$adminTitle = 'Media Library';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="sg-card p-5 mb-6">

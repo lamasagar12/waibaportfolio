@@ -1,7 +1,6 @@
 <?php
-$adminTitle = 'Sitemap & Robots';
-require_once __DIR__ . '/../includes/header.php';
-
+require_once __DIR__ . '/../../includes/bootstrap.php';
+Auth::requireAuth();
 $db = get_db();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,6 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $settings = SeoService::getGlobalSettings();
 $redirects = $db->query('SELECT * FROM redirects ORDER BY created_at DESC')->fetchAll();
 $sitemapPreview = SitemapService::generate();
+
+$adminTitle = 'Sitemap & Robots';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">

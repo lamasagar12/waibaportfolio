@@ -66,10 +66,19 @@ $projects = [
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <?php foreach ($projects as $project): ?>
         <div class="sg-card p-0 overflow-hidden group animate-on-scroll border-t-2 border-t-transparent hover:border-t-accent transition-all duration-500">
-            <div class="p-8 flex flex-col h-full">
+            <a href="<?= $project['link'] ?>" target="_blank" class="block relative aspect-video overflow-hidden border-b border-white/5 bg-tertiary">
+                <img src="https://unavatar.io/microlink/<?= urlencode($project['link']) ?>?fallback=https://s.wordpress.com/mshots/v1/<?= urlencode($project['link']) ?>?w=600" 
+                     alt="<?= $project['title'] ?>" 
+                     class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                     onerror="this.src='https://s.wordpress.com/mshots/v1/<?= urlencode($project['link']) ?>?w=600'">
+                <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500"></div>
+            </a>
+            <div class="p-8 flex flex-col">
                 <div class="flex items-center justify-between mb-4">
                     <span class="text-[10px] font-mono uppercase tracking-widest text-accent font-bold"><?= $project['category'] ?></span>
-                    <a href="<?= $project['link'] ?>" target="_blank" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-accent hover:bg-accent hover:text-primary transition-all duration-300">↗</a>
+                    <a href="<?= $project['link'] ?>" target="_blank" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-accent hover:bg-accent hover:text-primary transition-all duration-300">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
                 </div>
                 <h3 class="font-heading text-3xl mb-4 group-hover:text-accent transition-colors"><?= $project['title'] ?></h3>
                 <p class="text-textMuted text-sm mb-8 leading-relaxed"><?= $project['desc'] ?></p>

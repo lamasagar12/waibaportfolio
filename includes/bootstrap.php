@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once __DIR__ . '/../app/Core/helpers.php';
 
 Auth::startSession();

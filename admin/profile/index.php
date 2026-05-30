@@ -1,12 +1,9 @@
 <?php
-$adminTitle = 'Profile';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../includes/bootstrap.php';
+Auth::requireAuth();
 
 $db = get_db();
 $user = Auth::user();
-$stmt = $db->prepare('SELECT * FROM admin_users WHERE id = ?');
-$stmt->execute([$user['id']]);
-$profile = $stmt->fetch();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     CSRF::validateOrDie();
@@ -28,6 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     redirect(base_url('admin/profile/'));
 }
+
+$stmt = $db->prepare('SELECT * FROM admin_users WHERE id = ?');
+$stmt->execute([$user['id']]);
+$profile = $stmt->fetch();
+
+$adminTitle = 'Profile';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="max-w-lg sg-card p-6">

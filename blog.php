@@ -60,7 +60,7 @@ sg_page_hero('SEO <span>Blog</span>', 'Insights, strategies, and digital growth 
                         <span>·</span>
                         <span><?= (int)$post['reading_time'] ?> min read</span>
                     </div>
-                    <h2 class="font-heading font-bold text-lg mb-2">
+                    <h2 class="font-heading font-bold text-lg mb-2 tracking-[0.025em] md:tracking-[0.04em] leading-snug">
                         <a href="<?= base_url('blog/' . $post['slug']) ?>" class="hover:text-accent transition"><?= e($post['title']) ?></a>
                     </h2>
                     <p class="text-textSecondary text-sm line-clamp-3 mb-4"><?= e($post['excerpt']) ?></p>

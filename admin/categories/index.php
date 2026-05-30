@@ -1,6 +1,6 @@
 <?php
-$adminTitle = 'Categories';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../includes/bootstrap.php';
+Auth::requireAuth();
 $db = get_db();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -28,6 +28,9 @@ if (!empty($_GET['edit'])) {
     $stmt->execute([(int)$_GET['edit']]);
     $edit = $stmt->fetch();
 }
+
+$adminTitle = 'Categories';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">

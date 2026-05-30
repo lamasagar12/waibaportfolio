@@ -1,7 +1,6 @@
 <?php
-$adminTitle = 'Edit Page SEO';
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/seo-preview.php';
+require_once __DIR__ . '/../../includes/bootstrap.php';
+Auth::requireAuth();
 
 $key = $_GET['key'] ?? '';
 $page = SeoService::getPageSeo($key);
@@ -38,6 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     redirect(base_url('admin/pages/edit.php?key=' . urlencode($key)));
 }
 $p = $page;
+
+$adminTitle = 'Edit Page SEO';
+require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/seo-preview.php';
 ?>
 
 <form method="POST" enctype="multipart/form-data" class="space-y-6">

@@ -112,21 +112,19 @@
     </div>
 </form>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.17.1/standard-all/ckeditor.js"></script>
 <script>
-let editorInstance;
-ClassicEditor.create(document.querySelector('#editor'), {
-    toolbar: ['heading','|','bold','italic','underline','|','bulletedList','numberedList','|','blockQuote','insertTable','|','link','mediaEmbed','|','codeBlock','undo','redo'],
-    heading: { options: [
-        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-        { model: 'heading2', view: 'h2', title: 'H2', class: 'ck-heading_heading2' },
-        { model: 'heading3', view: 'h3', title: 'H3', class: 'ck-heading_heading3' },
-        { model: 'heading4', view: 'h4', title: 'H4', class: 'ck-heading_heading4' },
-    ]}
-}).then(e => { editorInstance = e; }).catch(console.error);
-
-document.getElementById('blog-form').addEventListener('submit', () => {
-    if (editorInstance) document.querySelector('#editor').value = editorInstance.getData();
+CKEDITOR.replace('editor', {
+    extraPlugins: 'embed,autoembed,image2,codesnippet,justify,colorbutton,panelbutton,font',
+    height: 400,
+    // Add custom configuration here if needed
+    contentsCss: [
+        'https://cdn.ckeditor.com/4.17.1/standard-all/contents.css'
+    ],
+    // Setup for dark mode appearance if possible, or just standard
+    uiColor: '#f8f9fa',
+    format_tags: 'p;h2;h3;h4;pre',
+    removeButtons: 'About',
 });
 
 function addAnchorRow() {

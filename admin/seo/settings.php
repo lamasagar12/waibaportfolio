@@ -1,10 +1,12 @@
 <?php
-$adminTitle = 'Global SEO Settings';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../includes/bootstrap.php';
+Auth::requireAuth();
 
 try {
     $settings = SeoService::getGlobalSettings();
 } catch (Exception $e) {
+    $adminTitle = 'Global SEO Settings';
+    require_once __DIR__ . '/../includes/header.php';
     echo '<div class="sg-card p-4"><a href="' . base_url('install.php') . '" class="text-accent">Run installer first</a></div>';
     require_once __DIR__ . '/../includes/footer.php';
     exit;
@@ -63,6 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     redirect(base_url('admin/seo/settings.php'));
 }
 $s = $settings;
+
+$adminTitle = 'Global SEO Settings';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <form method="POST" enctype="multipart/form-data" class="space-y-8">
