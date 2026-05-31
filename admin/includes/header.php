@@ -36,17 +36,17 @@ $flashError = flash('error');
     <nav class="py-4 space-y-1">
         <?php
         $menu = [
-            ['dashboard', 'Dashboard', 'admin/', '📊'],
-            ['pages', 'Website Pages', 'admin/pages/', '📄'],
-            ['seo', 'SEO Settings', 'admin/seo/settings.php', '🔍'],
-            ['blogs', 'Blogs', 'admin/blogs/', '📝'],
-            ['blogs-create', 'Add New Blog', 'admin/blogs/create.php', '➕'],
-            ['categories', 'Categories', 'admin/categories/', '📁'],
-            ['tags', 'Tags', 'admin/tags/', '🏷️'],
-            ['media', 'Media Library', 'admin/media/', '🖼️'],
-            ['anchors', 'Anchor Text Report', 'admin/anchors/', '🔗'],
-            ['sitemap', 'Sitemap / Robots', 'admin/sitemap/', '🗺️'],
-            ['profile', 'Profile', 'admin/profile/', '👤'],
+            ['dashboard', 'Dashboard', 'admin/', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>'],
+            ['pages', 'Website Pages', 'admin/pages/', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>'],
+            ['seo', 'SEO Settings', 'admin/seo/settings.php', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>'],
+            ['blogs', 'Blogs', 'admin/blogs/', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3v5h5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h10"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16h10"></path></svg>'],
+            ['blogs-create', 'Add New Blog', 'admin/blogs/create.php', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>'],
+            ['categories', 'Categories', 'admin/categories/', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>'],
+            ['tags', 'Tags', 'admin/tags/', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path></svg>'],
+            ['media', 'Media Library', 'admin/media/', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>'],
+            ['anchors', 'Anchor Text Report', 'admin/anchors/', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>'],
+            ['sitemap', 'Sitemap / Robots', 'admin/sitemap/', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>'],
+            ['profile', 'Profile', 'admin/profile/', '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>'],
         ];
 
 $script = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
@@ -75,11 +75,11 @@ foreach ($menu as $item):
     }
 ?>
 <a href="<?= base_url($url) ?>" class="sg-admin-nav-item <?= $active ? 'active' : '' ?>">
-    <span><?= e($icon) ?></span> <?= e($label) ?>
+    <span class="<?= $active ? 'text-accent' : 'text-textMuted' ?> transition-colors"><?= $icon ?></span> <?= e($label) ?>
 </a>
 <?php endforeach; ?>
         <a href="<?= base_url('admin/logout.php') ?>" class="sg-admin-nav-item text-red-400 hover:text-red-300">
-            <span>🚪</span> Logout
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg> Logout
         </a>
     </nav>
 </aside>

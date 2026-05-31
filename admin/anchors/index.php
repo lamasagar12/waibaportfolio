@@ -15,7 +15,10 @@ $duplicates = array_filter($anchorTexts, fn($c) => $c > 2);
 
 <?php if (!empty($duplicates)): ?>
 <div class="sg-card p-4 mb-6 border-accent/30">
-    <h4 class="text-accent font-semibold text-sm mb-2">⚠ Exact-Match Anchor Warning</h4>
+    <h4 class="text-accent font-semibold text-sm mb-2 flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 15c-.77 1.333.192 3 1.732 3z"></path></svg>
+        Exact-Match Anchor Warning
+    </h4>
     <p class="text-textSecondary text-xs">These anchor texts appear more than twice — consider varying them:</p>
     <ul class="mt-2 text-xs text-textMuted">
         <?php foreach ($duplicates as $text => $count): ?>

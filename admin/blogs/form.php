@@ -103,7 +103,14 @@
                         'heading_structure'=>'Proper H2/H3 structure','schema_enabled'=>'Schema enabled',
                     ];
                     foreach ($seoCheck['checks'] as $key => $pass): ?>
-                    <li class="<?= $pass ? 'text-green-400' : 'text-textMuted' ?>"><?= $pass ? '✓' : '○' ?> <?= $labels[$key] ?? $key ?></li>
+                    <li class="flex items-center gap-2 <?= $pass ? 'text-green-400' : 'text-textMuted' ?>">
+                        <?php if ($pass): ?>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <?php else: ?>
+                            <svg class="w-3.5 h-3.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle></svg>
+                        <?php endif; ?>
+                        <?= $labels[$key] ?? $key ?>
+                    </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
